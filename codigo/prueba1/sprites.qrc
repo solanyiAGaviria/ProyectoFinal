@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/goku">
+        <file>goku.png</file>
+    </qresource>
+    <qresource prefix="/fondo">
+        <file>torre_super_alta.jpg</file>
+    </qresource>
+</RCC>
