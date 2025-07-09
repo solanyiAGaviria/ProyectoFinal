@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/fondos">
+        <file>fondo_nivel1.png</file>
+        <file>entrada.png</file>
+        <file>perdio.png</file>
+        <file>perla.jpeg</file>
+    </qresource>
+</RCC>
