@@ -24,6 +24,8 @@ private:
     int filas;
     int columnas;
     int tamano;
+    QTimer* temporizadorMovimiento;
+    int direccionX = 0;
 
     int velocidad_y;
     bool en_el_aire;

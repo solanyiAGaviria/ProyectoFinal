@@ -33,6 +33,9 @@ private:
     int esferasRecolectadas;
     bool puedeFinalizar;
 
+    bool enPuntoFinal();
+    void mostrarMensajeFinal();
+
     void construirMatriz();
     void construirMapa();
     void verificarRecoleccion();
