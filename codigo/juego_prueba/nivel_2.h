@@ -1,0 +1,41 @@
+#ifndef NIVEL_2_H
+#define NIVEL_2_H
+
+#include <QWidget>
+#include <QGraphicsScene>
+#include <QGraphicsView>
+#include <QList>
+
+#include "goku_2.h"
+
+const int filas = 20;
+const int columnas = 25;
+const int tamanoCelda = 30;
+
+class nivel_2 : public QWidget {
+    Q_OBJECT
+
+public:
+    explicit nivel_2(QWidget *parent = nullptr);
+    void ver();
+
+private:
+    QGraphicsScene* escena;
+    QGraphicsView* vista;
+    int** matrizLaberinto;
+    void verificarFinalizacion();  // Verifica si Goku está en el punto final
+    QGraphicsRectItem* celdaFinal = nullptr;
+    QTimer* brilloTimer = nullptr;
+    bool estadoBrillo = false;
+    goku_2* personaje;
+
+    int totalEsferas;
+    int esferasRecolectadas;
+    bool puedeFinalizar;
+
+    void construirMatriz();
+    void construirMapa();
+    void verificarRecoleccion();
+};
+
+#endif // NIVEL_2_H

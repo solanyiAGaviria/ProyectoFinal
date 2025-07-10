@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/fondos">
+        <file>fondo_nivel1.png</file>
+        <file>entrada.png</file>
+        <file>perdio.png</file>
+        <file>perla.jpeg</file>
+    </qresource>
+    <qresource prefix="/spriet">
+        <file>goku.png</file>
+        <file>enemigos.png</file>
+        <file>poder.png</file>
+        <file>goku_2 .png</file>
+    </qresource>
+</RCC>
