@@ -9,7 +9,6 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    bala.cpp \
     enemigo_azul.cpp \
     enemigo_rojo.cpp \
     enemigo_verde.cpp \
@@ -25,7 +24,6 @@ SOURCES += \
     premio.cpp
 
 HEADERS += \
-    bala.h \
     enemigo_azul.h \
     enemigo_rojo.h \
     enemigo_verde.h \

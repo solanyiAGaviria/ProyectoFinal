@@ -108,7 +108,7 @@ void nivel_1::verificarColisiones() {
 
     QList<QGraphicsItem *> colisiones = jugador->collidingItems();
     for (QGraphicsItem *item : colisiones) {
-        /*
+
         if (typeid(*item) == typeid(enemigo_rojo) || typeid(*item) == typeid(enemigo_azul)) {
             timerSpawn->stop();
             timerColision->stop();
@@ -127,7 +127,7 @@ void nivel_1::verificarColisiones() {
             delete item;
             return;
         }
-            */
+
         // 🚀 Transición a nivel 2 al colisionar con un premio
         if (typeid(*item) == typeid(premio)) {
             // ⚠️ Pausar temporizadores

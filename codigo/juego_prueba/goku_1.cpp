@@ -31,11 +31,6 @@ void goku_1::keyPressEvent(QKeyEvent *event) {
     } else if (event->key() == Qt::Key_D && pos().x() < 800) {
         dx = 10;
         direccion_izquierda = false;
-    } else if (event->key() == Qt::Key_Space) {
-        bala* dispara = new bala();
-        dispara->setPos(x(), y());
-        if (scene()) scene()->addItem(dispara);
-        return;  // No actualizar animación ni movimiento
     }
 
     if (dx != 0 || dy != 0) {
