@@ -2,5 +2,5 @@
 #include <QPixmap>
 
 premio::premio() {
-    setPixmap(QPixmap(":/fondos/perla.jpeg"));  // usa tu imagen real
+    setPixmap(QPixmap(":/spriet/poder.png"));  // usa tu imagen real
 }

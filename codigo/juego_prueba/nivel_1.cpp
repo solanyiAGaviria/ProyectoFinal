@@ -1,5 +1,5 @@
 #include "nivel_1.h"
-#include "recta.h"
+#include "goku_1.h"
 #include "enemigo_rojo.h"
 #include "enemigo_azul.h"
 #include "enemigo_verde.h"
@@ -29,7 +29,6 @@ nivel_1::nivel_1() {
     jugadorAturdido = false;
     std::srand(std::time(nullptr));
 }
-
 void nivel_1::ver() {
     nivelScene = new QGraphicsScene;
     QPixmap fondoImg(":/fondos/fondo_nivel1.png");
@@ -37,12 +36,9 @@ void nivel_1::ver() {
     fondo->setPos(0, -11520);
     nivelScene->addItem(fondo);
 
-    jugador = new recta;
-    jugador->setBrush(Qt::black);
-    jugador->setRect(0, 0, 100, 50);
-    jugador->setFlag(QGraphicsItem::ItemIsFocusable);
-    jugador->setFocus();
-    jugador->setPos(512, 700);
+   //
+    jugador = new goku_1();
+    jugador->setPos(512, 500);
     nivelScene->addItem(jugador);
 
     vista = new QGraphicsView;
@@ -57,7 +53,7 @@ void nivel_1::ver() {
     int y = (screenGeometry.height() - vista->height()) / 2;
     vista->move(x, y);
 
-    QObject::connect(jugador, &recta::meMuevo, [=](QGraphicsItem *yo) {
+    QObject::connect(jugador, &goku_1::meMuevo, [=](QGraphicsItem *yo) {
         QPointF centro = yo->pos();
         if (centro.y() > -11400 && centro.y() < 780) {
             vista->centerOn(yo);
@@ -66,22 +62,18 @@ void nivel_1::ver() {
 
     vista->show();
 
-    // Agregar un premio
     premio *p = new premio;
-    p->setPos(500, -11000);
+    p->setPos(375, -11000);
     nivelScene->addItem(p);
 
-    // Timer para generar enemigos cada 2 segundos
     timerSpawn = new QTimer(this);
     connect(timerSpawn, &QTimer::timeout, this, [=]() { spawn(); });
     timerSpawn->start(2000);
 
-    // Timer para verificar colisiones
     timerColision = new QTimer(this);
     connect(timerColision, &QTimer::timeout, this, [=]() { verificarColisiones(); });
     timerColision->start(50);
 }
-
 void nivel_1::spawn() {
     int tipo = rand() % 3;
     enemigos *nuevo = nullptr;

@@ -1,11 +1,12 @@
 #include "enemigo_verde.h"
 #include <QTimer>
-#include <QBrush>
 #include <QGraphicsScene>
+#include <QPixmap>
+
 enemigo_verde::enemigo_verde(QGraphicsItem *jugador, QObject *parent)
     : enemigos(parent), jugador(jugador), impulso_activo(false)
 {
-    setBrush(Qt::green);
+    setPixmap(QPixmap(":/spriet/verde.png").scaled(60, 60));
 
     velocidad_normal = 1;
     velocidad_impulso = 6;

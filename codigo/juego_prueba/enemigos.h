@@ -2,18 +2,18 @@
 #define ENEMIGOS_H
 
 #include <QObject>
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem> // Cambio aquí
 
-class enemigos : public QObject, public QGraphicsRectItem
+class enemigos : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 
 public:
-    explicit enemigos(QObject *parent = nullptr);  // Constructor con parent
-    virtual ~enemigos();                           // Destructor virtual
+    explicit enemigos(QObject *parent = nullptr);
+    virtual ~enemigos();
 
 public slots:
-    virtual void mover();  // Para que pueda ser sobreescrito
+    virtual void mover();  // Puede ser sobreescrito
 };
 
 #endif // ENEMIGOS_H

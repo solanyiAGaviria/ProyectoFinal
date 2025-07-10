@@ -15,14 +15,14 @@ SOURCES += \
     enemigo_verde.cpp \
     enemigos.cpp \
     esfera_azul.cpp \
+    goku_1.cpp \
     goku_2.cpp \
     main.cpp \
     mainwindow.cpp \
     nivel_1.cpp \
     nivel_2.cpp \
     paso_de_nivel.cpp \
-    premio.cpp \
-    recta.cpp
+    premio.cpp
 
 HEADERS += \
     bala.h \
@@ -31,13 +31,13 @@ HEADERS += \
     enemigo_verde.h \
     enemigos.h \
     esfera_azul.h \
+    goku_1.h \
     goku_2.h \
     mainwindow.h \
     nivel_1.h \
     nivel_2.h \
     paso_de_nivel.h \
-    premio.h \
-    recta.h
+    premio.h
 
 FORMS += \
     mainwindow.ui

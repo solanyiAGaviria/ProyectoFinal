@@ -1,21 +1,19 @@
 #include "enemigo_azul.h"
 #include <QTimer>
-#include <QBrush>
 #include <QGraphicsScene>
 #include <cmath>
+#include <QPixmap>
 
 enemigo_azul::enemigo_azul(QObject *parent)
     : enemigos(parent)
 {
-    setBrush(Qt::blue);
+    setPixmap(QPixmap(":/spriet/azul.png").scaled(60, 60)); // Ajusta tamaño e imagen
 
-    // Posición inicial del centro del círculo
-    centroX = x(); // Se actualizará luego si se define setPos
+    centroX = x();
     centroY = y();
-
-    radio = 200;          // radio del movimiento circular
-    angulo = 0;          // ángulo inicial en radianes
-    avance = 0;          // cuánto ha descendido el enemigo
+    radio = 200;
+    angulo = 0;
+    avance = 0;
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &enemigo_azul::mover);

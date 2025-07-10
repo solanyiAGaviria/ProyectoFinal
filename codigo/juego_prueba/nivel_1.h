@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <QTimer>
-#include "recta.h"
+#include "goku_1.h"
 
 class nivel_1 : public QObject
 {
@@ -25,7 +25,7 @@ private:
 
     QGraphicsScene *nivelScene;
     QGraphicsView *vista;
-    recta *jugador;
+    goku_1 *jugador;
 
     QTimer *timerSpawn;
     QTimer *timerColision;

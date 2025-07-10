@@ -10,8 +10,7 @@ enemigos::enemigos(QObject *parent)
     int random_number = rand() % 644;
     setPos(180 + random_number, -11824);
 
-    // Forma por defecto
-    setRect(0, 0, 100, 100);
+    // Aquí ya no usamos setRect, se definirá el pixmap en cada hijo
 }
 
 enemigos::~enemigos()
@@ -28,4 +27,3 @@ void enemigos::mover()
         delete this;
     }
 }
-

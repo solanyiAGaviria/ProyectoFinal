@@ -1,17 +1,18 @@
 #include "enemigo_rojo.h"
 #include <QTimer>
-#include <QBrush>
 #include <QGraphicsScene>
 #include <cmath>
+#include <QPixmap>
+
 enemigo_rojo::enemigo_rojo(QObject *parent)
     : enemigos(parent)
 {
-    setBrush(Qt::red);
+    setPixmap(QPixmap(":/spriet/rojo.png").scaled(60, 60));
 
-    x_inicial = x();       // Se define después de ser añadido a la escena
+    x_inicial = x();
     velocidad_y = 4;
-    amplitud = 150.0;       // Cuánto se mueve hacia los lados
-    frecuencia = 0.01;     // Qué tan rápido oscila
+    amplitud = 150.0;
+    frecuencia = 0.01;
 
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &enemigo_rojo::mover);

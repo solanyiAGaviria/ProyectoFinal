@@ -7,8 +7,10 @@
     </qresource>
     <qresource prefix="/spriet">
         <file>goku.png</file>
-        <file>enemigos.png</file>
         <file>poder.png</file>
         <file>goku_2 .png</file>
+        <file>azul.png</file>
+        <file>verde.png</file>
+        <file>rojo.png</file>
     </qresource>
 </RCC>
