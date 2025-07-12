@@ -23,7 +23,7 @@ private:
     QGraphicsScene* escena;
     QGraphicsView* vista;
     int** matrizLaberinto;
-    void verificarFinalizacion();  // Verifica si Goku está en el punto final
+    void verificarFinalizacion();
     QGraphicsRectItem* celdaFinal = nullptr;
     QTimer* brilloTimer = nullptr;
     bool estadoBrillo = false;
@@ -39,6 +39,10 @@ private:
     void construirMatriz();
     void construirMapa();
     void verificarRecoleccion();
+    void verificarTeletransportador();
+
+    QVector<QPoint> teleEntradas;
+    QVector<QPoint> teleSalidas;
 };
 
 #endif // NIVEL_2_H
