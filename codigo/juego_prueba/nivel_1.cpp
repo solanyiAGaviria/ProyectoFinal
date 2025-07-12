@@ -128,16 +128,16 @@ void nivel_1::verificarColisiones() {
             return;
         }
 
-        // 🚀 Transición a nivel 2 al colisionar con un premio
+        //  Transición a nivel 2 al colisionar con un premio
         if (typeid(*item) == typeid(premio)) {
-            // ⚠️ Pausar temporizadores
+            //  Pausar temporizadores
             if (timerSpawn) timerSpawn->stop();
             if (timerColision) timerColision->stop();
 
-            // ⚠️ Ocultar vista de nivel_1 (pero no eliminarla)
+            // Ocultar vista de nivel_1 (pero no eliminarla)
             if (vista) vista->hide();
 
-            // ⚠️ Mostrar transición (no elimina nada aún)
+            // ⚠ Mostrar transición (no elimina nada aún)
             paso_de_nivel *transicion = new paso_de_nivel();
             transicion->show();
 

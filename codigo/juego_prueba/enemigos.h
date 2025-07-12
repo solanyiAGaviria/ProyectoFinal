@@ -13,7 +13,7 @@ public:
     virtual ~enemigos();
 
 public slots:
-    virtual void mover();  // Puede ser sobreescrito
+    virtual void mover();  // Puede ser modificable para las hijas
 };
 
 #endif // ENEMIGOS_H
