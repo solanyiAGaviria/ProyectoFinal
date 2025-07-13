@@ -118,13 +118,20 @@ void nivel_1::verificarColisiones() {
         }
 
         if (typeid(*item) == typeid(enemigo_verde)) {
+            jugadorAturdido = true;
             jugador->setEnabled(false);
-            QTimer::singleShot(3000, jugador, [=]() {
-                jugador->setEnabled(true);
-            });
-
+            jugador->setFlag(QGraphicsItem::ItemIsFocusable, false);
             nivelScene->removeItem(item);
             delete item;
+
+            QTimer::singleShot(3000, this, [=]() {
+                if (jugador) {
+                    jugador->setEnabled(true);
+                    jugador->setFlag(QGraphicsItem::ItemIsFocusable, true);
+                    jugador->setFocus();
+                    jugadorAturdido = false;
+                }
+            });
             return;
         }
 
